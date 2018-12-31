@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.airbnb.paris.Paris;
 
@@ -24,6 +25,8 @@ public class Main3ActivityFragment extends Fragment {
 
 
     Button button;
+    TextView textViewHeadingOne, textViewHeadingTwo;
+
     public Main3ActivityFragment() {
     }
 
@@ -37,6 +40,8 @@ public class Main3ActivityFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        textViewHeadingOne = view.findViewById(R.id.textview_heading_one);
+        textViewHeadingTwo = view.findViewById(R.id.textview_heading_two);
         button = view.findViewById(R.id.buttonLogin);
         view.findViewById(R.id.buttonLogin).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,7 +56,7 @@ public class Main3ActivityFragment extends Fragment {
 
         getActivity().getWindow().setStatusBarColor(getColor());
 
-        Toolbar toolbar=getActivityToolbar();
+        Toolbar toolbar = getActivityToolbar();
         Paris.styleBuilder(toolbar)
                 .background(new ColorDrawable(themeColorPrimary))
                 .apply();
@@ -63,10 +68,18 @@ public class Main3ActivityFragment extends Fragment {
                 .background(new ColorDrawable(themeColorPrimary))
                 .apply();
 
+        Paris.styleBuilder(textViewHeadingOne)
+                .textColor(getColor())
+                .apply();
+
+        Paris.styleBuilder(textViewHeadingTwo)
+                .textColor(getColor())
+                .apply();
+
     }
 
     private Toolbar getActivityToolbar() {
-       return  ((Main3Activity)getActivity()).getToolbar();
+        return ((Main3Activity) getActivity()).getToolbar();
     }
 
     private void setActivityToolbar(Toolbar toolbar) {
