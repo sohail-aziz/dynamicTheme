@@ -17,4 +17,22 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+    <style name="Button" parent="Widget.AppCompat.Button">
+        <!-- Base style for Buttons -->
+        <item name="android:textSize">12sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:minWidth">120dp</item>
+        <item name="android:height">36dp</item>
+        <item name="android:paddingLeft">16dp</item>
+        <item name="android:paddingRight">16dp</item>
+        <item name="android:background">@drawable/button_background</item>
+        <item name="background">@drawable/button_background</item>
+    </style>
+
+    <style name="ProgressButtonOutline">
+        <item name="buttonBackground">@drawable/shape_button_outline</item>
+        <item name="buttonOutlineColor">?attr/colorPrimary</item>
+        <item name="buttonOutlineWidth">1dp</item>
+        <item name="buttonTextColor">?attr/colorPrimary</item>
+    </style>
 </resources>

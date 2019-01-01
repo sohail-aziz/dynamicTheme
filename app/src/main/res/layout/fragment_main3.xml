@@ -35,4 +35,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="parent" />
+
+    <com.example.sohailaziz.dynamictheming.ProgressButton
+        android:id="@+id/progressbutton"
+        style="@style/ProgressButtonOutline"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/buttonLogin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="16dp"
+        app:buttonText="Progress Button"
+        tools:visibility="visible" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

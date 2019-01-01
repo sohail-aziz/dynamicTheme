@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="ProgressButton">
+        <attr name="buttonText" format="string" />
+        <attr name="buttonTextColor" format="color" />
+        <attr name="buttonBackgroundTint" format="color" />
+        <attr name="buttonBackground" format="reference" />
+        <attr name="buttonOutlineColor" format="color" />
+        <attr name="buttonOutlineWidth" format="dimension" />
+    </declare-styleable>
+</resources>

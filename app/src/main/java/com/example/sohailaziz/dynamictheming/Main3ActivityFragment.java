@@ -3,6 +3,7 @@ package com.example.sohailaziz.dynamictheming;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,6 +26,8 @@ public class Main3ActivityFragment extends Fragment {
 
 
     Button button;
+    ProgressButton progressButton;
+
     TextView textViewHeadingOne, textViewHeadingTwo;
 
     public Main3ActivityFragment() {
@@ -40,6 +43,7 @@ public class Main3ActivityFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        progressButton=view.findViewById(R.id.progressbutton);
         textViewHeadingOne = view.findViewById(R.id.textview_heading_one);
         textViewHeadingTwo = view.findViewById(R.id.textview_heading_two);
         button = view.findViewById(R.id.buttonLogin);
@@ -49,6 +53,26 @@ public class Main3ActivityFragment extends Fragment {
                 updateTheme();
             }
         });
+
+        progressButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                progressButton.startProgress();
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        progressButton.stopProgress();
+                    }
+                },2000);
+            }
+        });
+
+    }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        updateTheme();
     }
 
     private void updateTheme() {
